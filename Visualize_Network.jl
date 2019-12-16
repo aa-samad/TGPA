@@ -53,7 +53,7 @@ A = A+A'; #symmetric
 A = min.(A, 1); #simple graph
 A = convert(SparseMatrixCSC{Int64,Int64},A);
 xy = igraph_layout(A)
-f = graphplot(A,xy,"/Users/eikmeier/Dropbox/TGPA/WWW/images/TGPA_example_network","TGPA(p,r,q)")
+f = graphplot(A,xy,"./plots/TGPA_example_network","TGPA(p,r,q)")
 #f = graphplot(A,xy,"testing","TGPA")
 
 ## TGPA_v2
@@ -63,7 +63,7 @@ A = A+A'; #symmetric
 A = min.(A, 1); #simple graph
 A = convert(SparseMatrixCSC{Int64,Int64},A);
 xy = igraph_layout(A)
-f = graphplot(A,xy,"/Users/eikmeier/Dropbox/TGPA/WWW/images/TGPA2_example_network","TGPA(p,q)")
+f = graphplot(A,xy,"./plots/TGPA2_example_network","TGPA(p,q)")
 #f = graphplot(A,xy,"testing","TGPA")
 
 ## GPA
@@ -74,7 +74,7 @@ A = min.(A,1);
 A = convert(SparseMatrixCSC{Int64,Int64},A);
 
 xy = igraph_layout(A)
-f = graphplot(A,xy, "/Users/eikmeier/Dropbox/TGPA/WWW/images/GPA_example_network","GPA")
+f = graphplot(A,xy, "./plots/GPA_example_network","GPA")
 
 
 ## Holme TGPA
@@ -84,4 +84,4 @@ A = A+A'; #symmetric
 A = min.(A, 1); #simple graph
 A = convert(SparseMatrixCSC{Int64,Int64},A);
 xy = igraph_layout(A)
-#f = graphplot(A,xy,"/Users/eikmeier/Dropbox/TGPA/WWW/images/Holme_example_network","Holme")
+f = graphplot(A,xy,"./plots/HOLME_example_network","Holme")

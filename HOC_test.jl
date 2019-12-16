@@ -5,6 +5,7 @@
 
 using MatrixNetworks
 using HigherOrderClustering
+using SparseArrays
 include("TGPA_generator.jl")
 include("TGPA_generator_v2.jl")
 
@@ -20,7 +21,7 @@ for i = 1:length(p)
     A = sparse(A);
     A = A+A'; #symmetric
     A = min.(A, 1); #simple graph
-    A = convert(SparseMatrixCSC{Int64,Int64},A);
+    A = convert(SparseMatrixCSC{Int64},A);
     ccfs = higher_order_ccfs(A,2);
     @show ccfs.global_hoccf
     @show ccfs.avg_hoccf
